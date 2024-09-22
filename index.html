@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 5</title>
+    <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
       rel="stylesheet"
@@ -43,7 +44,7 @@
             <img src="./assets/coin.png" alt="Coin Icon" />
           </div>
           <div>
-            <h1 class="text-xl font-semibold">5500 BDT</h1>
+            <h1 class="text-xl font-semibold"><span id="my-balance">8000</span> BDT</h1>
           </div>
         </div>
       </div>
@@ -56,10 +57,6 @@
     </section>
 
     <!-- Navbar section end -->
-
-    <!-- donation button start -->
-
-    <!-- donation button  end -->
 
     <!-- donation details section start -->
 
@@ -80,10 +77,10 @@
         <!-- Donation Details Section -->
         <div class="w-full md:w-1/2 text-center md:text-left">
           <div
-            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-32 p-3 space-x-2 mb-4 mx-auto md:mx-0"
+            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-4/5 p-3 space-x-2 mb-4 mx-auto md:mx-0"
           >
             <img src="./assets/coin.png" alt="Coin" class="w-8 h-8" />
-            <span class="font-bold text-xl">0</span>
+            <span id="noakhali-total" class="font-bold text-xl">10000</span>
             <p class="font-semibold text-lg">BDT</p>
           </div>
 
@@ -101,16 +98,45 @@
           </p>
 
           <input
+          id="noakhali-input"
             type="number"
             placeholder="Enter amount"
             class="input input-bordered w-full max-w-xs mb-4"
           />
           <br />
-          <button class="btn btn-success text-white font-bold w-full max-w-xs">
+          <button id="noakhali-donate-btn" class="btn btn-success text-white font-bold w-full max-w-xs">
             Donate
           </button>
         </div>
       </div>
+      <!-- Open the modal using ID.showModal() method -->
+
+
+<dialog  class="modal" id="show-modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Donation Successful!</h3>
+    <p class="py-4">Thank you for your donation.</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-outline btn-success">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+<dialog  class="modal" id="show-modal-invalid">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Donation Unsuccessful!</h3>
+    <p class="py-4">Please input a valid amount</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-outline btn-error">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
     </section>
     <!-- Feni Section -->
     <section class="container mx-auto mt-20 p-10">
@@ -129,15 +155,15 @@
         <!-- Donation Details Section -->
         <div class="w-full md:w-1/2 text-center md:text-left">
           <div
-            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-32 p-3 space-x-2 mb-4 mx-auto md:mx-0"
+            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-4/5 p-3 space-x-2 mb-4 mx-auto md:mx-0"
           >
             <img src="./assets/coin.png" alt="Coin" class="w-8 h-8" />
-            <span class="font-bold text-xl">0</span>
+            <span id="feni-total" class="font-bold text-xl">6000</span>
             <p class="font-semibold text-lg">BDT</p>
           </div>
 
           <h1 class="text-3xl font-bold mb-4">
-            Support Flood Relief for Noakhali, Bangladesh
+            Donate for Flood relief in Feni Bangladesh
           </h1>
           <p class="text-gray-600 mb-6">
             The recent floods in Noakhali have caused widespread
@@ -150,12 +176,13 @@
           </p>
 
           <input
+          id="feni-input"
             type="number"
             placeholder="Enter amount"
             class="input input-bordered w-full max-w-xs mb-4"
           />
           <br />
-          <button class="btn btn-success text-white font-bold w-full max-w-xs">
+          <button id="feni-btn" class="btn btn-success text-white font-bold w-full max-w-xs">
             Donate
           </button>
         </div>
@@ -178,10 +205,10 @@
         <!-- Donation Details Section -->
         <div class="w-full md:w-1/2 text-center md:text-left">
           <div
-            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-32 p-3 space-x-2 mb-4 mx-auto md:mx-0"
+            class="flex justify-center md:justify-start items-center border bg-gray-100 rounded w-4/5 p-3 space-x-2 mb-4 mx-auto md:mx-0"
           >
             <img src="./assets/coin.png" alt="Coin" class="w-8 h-8" />
-            <span class="font-bold text-xl">0</span>
+            <span id="quota-total" class="font-bold text-xl">5000</span>
             <p class="font-semibold text-lg">BDT</p>
           </div>
 
@@ -199,19 +226,20 @@
           </p>
 
           <input
+          id="quota-input"
             type="number"
             placeholder="Enter amount"
             class="input input-bordered w-full max-w-xs mb-4"
           />
           <br />
-          <button class="btn btn-success text-white font-bold w-full max-w-xs">
+          <button id="quota-btn" class="btn btn-success text-white font-bold w-full max-w-xs">
             Donate
           </button>
         </div>
       </div>
     </section>
     <!-- donation details section end -->
-
+<script src="./js/utilities.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
