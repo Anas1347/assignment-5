@@ -2,12 +2,8 @@ document
   .getElementById("noakhali-donate-btn")
   .addEventListener("click", function () {
     const noakhaliDonateValue = inputValue("noakhali-input");
-    const myBalance = parseFloat(
-      document.getElementById("my-balance").innerText
-    );
-    const noakhaliTotalDonate = parseFloat(
-      document.getElementById("noakhali-total").innerText
-    );
+    const myBalance = textField("my-balance");
+    const noakhaliTotalDonate = textField("noakhali-total");
     if (
       isNaN(noakhaliDonateValue) ||
       noakhaliDonateValue <= 0 ||
@@ -41,10 +37,8 @@ document
   });
 document.getElementById("feni-btn").addEventListener("click", function () {
   const feniDonateValue = inputValue("feni-input");
-  const myBalance = parseFloat(document.getElementById("my-balance").innerText);
-  const feniTotalDonate = parseFloat(
-    document.getElementById("feni-total").innerText
-  );
+  const myBalance = textField("my-balance");
+  const feniTotalDonate = textField("feni-total");
   if (
     isNaN(feniDonateValue) ||
     feniDonateValue <= 0 ||
@@ -76,10 +70,8 @@ document.getElementById("feni-btn").addEventListener("click", function () {
 });
 document.getElementById("quota-btn").addEventListener("click", function () {
   const quotaDonateValue = inputValue("quota-input");
-  const myBalance = parseFloat(document.getElementById("my-balance").innerText);
-  const quotaTotalDonate = parseFloat(
-    document.getElementById("quota-total").innerText
-  );
+  const myBalance = textField("my-balance");
+  const quotaTotalDonate = textField("quota-total");
   if (
     isNaN(quotaDonateValue) ||
     quotaDonateValue <= 0 ||
